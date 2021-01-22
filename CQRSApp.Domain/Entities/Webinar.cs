@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CQRSApp.Domain.Entities
 {
-    public class Webinars : AuditableEntity
+    public class Webinar : AuditableEntity
     {
         public int Id { get; set; }
         
