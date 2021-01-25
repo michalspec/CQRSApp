@@ -12,6 +12,8 @@ namespace CQRSApp.Application.Mapper
         public MappingProfile()
         {
             CreateMap<Post, PostInListViewModel>().ReverseMap();
+            CreateMap<Post, PostDetailViewModel>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
         }
     }
 }
