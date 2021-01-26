@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CQRSApp.Application.Functions.Posts
+namespace CQRSApp.Application.Functions.Categories.Queries.GetCategoryListWithPosts
 {
-    public class PostInListViewModel
+    public class CategoryPostDto
     {
         public int PostId { get; set; }
         public string Title { get; set; }
+        public string Author { get; set; }
         public DateTime Date { get; set; }
         public string ImageUrl { get; set; }
         public int Rate { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }

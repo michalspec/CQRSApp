@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CQRSApp.Application.Functions.Posts
 {
-    class GetPostsListQueryHandler : IRequestHandler<GetPostsListQuery, List<PostInListViewModel>>
+    class GetPostsListQueryHandler : IRequestHandler<GetPostsListQuery, List<PostViewModel>>
     {
         private readonly IMapper _mapper;
         private readonly IAsyncRepository<Post> _postRepository;
@@ -21,12 +21,12 @@ namespace CQRSApp.Application.Functions.Posts
             _mapper = mapper;
             _postRepository = postRepository;
         }
-        public async Task<List<PostInListViewModel>> Handle(GetPostsListQuery request, CancellationToken cancellationToken)
+        public async Task<List<PostViewModel>> Handle(GetPostsListQuery request, CancellationToken cancellationToken)
         {
             var all = await _postRepository.GetAllAsync();
             var allordered = all.OrderBy(x => x.Date);
 
-            return _mapper.Map<List<PostInListViewModel>>(all);
+            return _mapper.Map<List<PostViewModel>>(all);
         }
     }
 }

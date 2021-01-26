@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CQRSApp.Application.Functions.Posts
 {
-    public class GetPostsListQuery : IRequest<List<PostInListViewModel>>
+    public class GetPostsListQuery : IRequest<List<PostViewModel>>
     {
 
     }

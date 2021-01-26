@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using CQRSApp.Application.Functions.Categories.Queries.GetCategoryList;
+using CQRSApp.Application.Functions.Categories.Queries.GetCategoryListWithPosts;
 using CQRSApp.Application.Functions.Posts;
+using CQRSApp.Application.Functions.Posts.Commands.CreatePost;
 using CQRSApp.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,9 +14,15 @@ namespace CQRSApp.Application.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Post, PostInListViewModel>().ReverseMap();
+            CreateMap<Post, PostViewModel>().ReverseMap();
             CreateMap<Post, PostDetailViewModel>().ReverseMap();
-            CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryDto>();
+
+            CreateMap<Category, CategoryInListViewModel>();
+            CreateMap<Category, CategoryPostDto>();
+            CreateMap<Category, CategoryPostListViewModel>();
+
+            CreateMap<Post, CreatedPostCommand>().ReverseMap();
         }
     }
 }
